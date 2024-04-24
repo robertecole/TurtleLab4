@@ -14,5 +14,5 @@ def get_lengths():
     lengths = [] 
     for _ in range(2):
         length = float(input("Enter the length of each arm of the star: "))  
-        lengths.append(length)  # Adding elements to the list
+        lengths.append(length) 
     return lengths
