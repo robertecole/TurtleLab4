@@ -1,0 +1,18 @@
+import turtle
+
+def draw_star(length): 
+    #draws a star with the given length of each arm using multi-alternative if structure
+    if length > 0:  
+        for _ in range(5):  
+            turtle.forward(length)
+            turtle.right(144)
+    else:
+        print("Length must be greater than zero.")
+
+def get_lengths(): 
+    #asks user for the lengths of each arm of the stars
+    lengths = []  
+    for i in range(2):
+        length = float(input(f"Enter the length of each arm of star {i+1}: "))  
+        lengths.append(length) 
+    return lengths
