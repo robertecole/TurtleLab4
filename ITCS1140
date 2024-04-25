@@ -1,18 +1,39 @@
 import turtle
 
-def draw_star(length):  
-    #draws star with the given length of each arm using a multi-alternative if structure
-    if length > 0:  
-        for _ in range(5): 
+#draws star with a given length
+def draw_star(length):
+    if length > 0: #multi-alternative if structure
+        for _ in range(5): #single loop
             turtle.forward(length)
             turtle.right(144)
     else:
-        print("Length must be greater than zero.")
+        print("Length must be greater than zero.") #output statement
 
-def get_lengths():  
-    #asks the user for the lengths of each arm of the stars with a list
-    lengths = [] 
-    for _ in range(2):
-        length = float(input("Enter the length of each arm of the star: "))  
-        lengths.append(length) 
+#draws 2 touching stars
+def draw_touching_stars():
+    lengths = [] #list to store the lengths of star arms
+    for _ in range(2): #single loop
+        length = float(input("Enter the length of each arm of the star: ")) #input statement
+        lengths.append(length) #list
+        draw_star(length)
+        turtle.penup()
+        turtle.goto(0, 0)
+        turtle.right(144)
+        turtle.pendown()
     return lengths
+
+#main function to set up the turtle screen
+def main():
+    screen = turtle.Screen()
+    screen.setup(width=600, height=400)
+    screen.bgcolor("white")
+    pen = turtle.Turtle()
+    pen.speed(0)
+    pen.color("black")
+
+if name == "main": #main function to call other functions
+    draw_touching_stars()
+    main()
+    turtle.done()
+
+
