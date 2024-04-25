@@ -31,7 +31,7 @@ def main():
     pen.speed(0)
     pen.color("black")
 
-if __name__ == "main": #main function to call other functions
+if __name__ == "__main__": #main function to call other functions
     draw_touching_stars()
     main()
     turtle.done()
