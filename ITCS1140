@@ -1,39 +1,42 @@
 import turtle
 
-#draws star with a given length
+#Function to draw a star with a given length RC
 def draw_star(length):
-    if length > 0: #multi-alternative if structure
-        for _ in range(5): #single loop
+    if length > 0: #multi-alternative if structure RC
+        for _ in range(5): #single loop RC
             turtle.forward(length)
             turtle.right(144)
     else:
-        print("Length must be greater than zero.") #output statement
+        print("Length must be greater than zero.") #output statement RC
 
-#draws 2 touching stars
+#function to draw 2 touching stars RC+LS
 def draw_touching_stars():
-    lengths = [] #list to store the lengths of star arms
-    for _ in range(2): #single loop
-        length = float(input("Enter the length of each arm of the star: ")) #input statement
-        lengths.append(length) #list
-        draw_star(length)
-        turtle.penup()
-        turtle.goto(0, 0)
-        turtle.right(144)
-        turtle.pendown()
+    lengths = [] #list to store the length of star arms RC
+    for _ in range(2): # outer loop that draws two stars LS
+        length = float(input("Enter the length of each arm of the star: ")) #input statement RC
+        lengths.append(length) #adds the lengths to the list RC
+        for _ in range(1): # inner loop that draws each star LS
+            draw_star(length) #draws star LS
+            #move turtle to draw the other star LS
+            turtle.penup()
+            turtle.goto(0, 0)
+            turtle.right(144)
+            turtle.pendown()
     return lengths
 
-#main function to set up the turtle screen
+#main function to set up the turtle screen LS
 def main():
     screen = turtle.Screen()
-    screen.setup(width=600, height=400)
-    screen.bgcolor("white")
+    screen.setup(width=600, height=200)
+    screen.bgcolor("red")
     pen = turtle.Turtle()
     pen.speed(0)
     pen.color("black")
 
-if __name__ == "__main__": #main function to call other functions
-    draw_touching_stars()
+#main function to call other functions LS
+if __name__ == "__main__": 
+    lengths = draw_touching_stars()
+    print("Lengths of star arms:", lengths) # Output statement
     main()
     turtle.done()
-
 
