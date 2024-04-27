@@ -27,7 +27,7 @@ def draw_touching_stars():
 #main function to set up the turtle screen LS
 def main():
     screen = turtle.Screen()
-    screen.setup(width=600, height=200)
+    screen.setup(width=1000, height=1000)
     screen.bgcolor("red")
     pen = turtle.Turtle()
     pen.speed(0)
@@ -36,7 +36,7 @@ def main():
 #main function to call other functions LS
 if __name__ == "__main__": 
     lengths = draw_touching_stars()
-    print("Lengths of star arms:", lengths) # Output statement
+    print("Lengths of star arms:", lengths) 
     main()
     turtle.done()
 
